@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1525139347 source:c:\utn\programacion i\call center\callcenter.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"CallCenter.h"
+
+1525139400 source:c:\utn\programacion i\call center\main.c
+	<stdio.h>
+	<stdlib.h>
+	"CallCenter.h"
+
+1525139291 c:\utn\programacion i\call center\callcenter.h
+
+1525139462 source:c:\utn\programacion i\call center\ely.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1525138773 c:\utn\programacion i\call center\ely.h
+
