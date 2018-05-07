@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1525695157 source:c:\test\elifalcon\primerparcial\egresos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"egresos.h"
+
+1525700504 source:c:\test\elifalcon\primerparcial\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"propietario.h"
+
+1525695974 c:\test\elifalcon\primerparcial\propietario.h
+
+1525695266 source:c:\test\elifalcon\primerparcial\ingresos.c
+	<stdio.h>
+	<stdlib.h>
+	"ingresos.h"
+
+1525694958 c:\test\elifalcon\primerparcial\egresos.h
+
+1525694958 c:\test\elifalcon\primerparcial\ingresos.h
+
+1525700628 source:c:\test\elifalcon\primerparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"propietario.h"
+	"ingresos.h"
+	"egresos.h"
+
+1525700652 c:\test\elifalcon\primerparcial\funciones.h
+	"propietario.h"
+
+1525695974 source:c:\test\elifalcon\primerparcial\propietario.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"propietario.h"
+
