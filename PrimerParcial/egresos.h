@@ -5,8 +5,8 @@
 
 typedef struct
 {
-    int marca;
-    float importe;
+   int marca_auto;
+   float importe;
 }eEgreso;
 
 void HardcodeEgreso(eEgreso lista_egresos[]);

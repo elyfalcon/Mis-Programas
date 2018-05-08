@@ -46,9 +46,7 @@ int main()
                 ModificarUnaPersona(lista_propietario,30);
                 break;
             case 3:
-                PedirEntero("Ingrese el id del Propietario a borrar");
-                fflush(stdin);
-                scanf("%d",&idPropietario);
+                idPropietario=PedirEntero("Ingrese el id del Propietario a borrar");
                 BorrarUnaPersona(lista_propietario,idPropietario,30);
                 break;
             case 4:

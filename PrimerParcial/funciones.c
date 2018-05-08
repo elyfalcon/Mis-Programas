@@ -90,12 +90,14 @@ void MostrarUnaPersona(ePropietario propietario)
 {
     printf("\nNombre: %s  ID: %d direccion: %s tarjeta: %s \n",propietario.nombre_prop,propietario.idPropietario,propietario.direccion,propietario.tarjeta);
 }
-void ListarPropietarios(ePropietario lista_propietario[],int cantidad)
+int ListarPropietarios(ePropietario lista_propietario[],int cantidad)
 {
     int i;
+    int retorno=-1;
 
-  //  if(lista_propietario !=NULL)
- //   {
+   if(lista_propietario !=NULL)
+  {
+      retorno=0;
         for(i=0;i<cantidad;i++)
         {
             if(lista_propietario[i].idPropietario!=0)
@@ -104,9 +106,11 @@ void ListarPropietarios(ePropietario lista_propietario[],int cantidad)
             }
 
         }
-  //  }
+    }
         system("pause");
+        return retorno;
 }
+
 int buscarPorId(ePropietario lista_propietario[], int id,int cantidad)
 {
     int i;
@@ -118,12 +122,17 @@ int buscarPorId(ePropietario lista_propietario[], int id,int cantidad)
             if(id==lista_propietario[i].idPropietario)
             {
                 printf("La persona buscada es:");
-                printf("\n%d %s %d\n",lista_propietario[i].idPropietario,lista_propietario[i].nombre_prop,lista_propietario[i].direccion,lista_propietario[i].tarjeta);
+                printf("\n%d %s %s %s\n",lista_propietario[i].idPropietario,lista_propietario[i].nombre_prop,lista_propietario[i].direccion,lista_propietario[i].tarjeta);
                 system("pause");
                 flag=i;
                 break;
             }
+            else
+                {
+            printf("\nNo se encontro el propietario: ");
+                }
         }
+
   }
   return flag;
 }
@@ -138,7 +147,7 @@ void ModificarUnaPersona(ePropietario lista_propietario[],int cantidad)
     {
         lista_propietario[index].idPropietario = index+1;
         fflush(stdin);
-        printf("\nIngrese Numero de tarjeta: ");
+        printf("\nIngrese el nuevo Numero de tarjeta:  ");
         gets(lista_propietario[index].tarjeta);
         fflush(stdin);
 
@@ -155,17 +164,18 @@ int i;
 
   i=PedirEntero("Ingrese el id del propietario");
   index= buscarPorId(lista,i,cantidad);
-  if(index!=-1){
-                            lista[index].idPropietario=0;
-
-                        }else{
-                            printf("Propietario no encontrado!!!");
-
-                        }
+  if(index!=-1)
+    {
+       lista[index].idPropietario=0;
+    }
+    else
+    {
+      printf("Propietario no encontrado!!!");
+     }
 }
 
-void IngresoAuto(eIngresos autos)
+/*void IngresoAuto(eIngresos autos)
 {
   printf("\n ID: %d direccion: %s patente: marca: %d  \n",propietario.nombre_prop,propietario.idPropietario,propietario.direccion,propietario.tarjeta);
 }
-
+*/

@@ -5,11 +5,14 @@
 
 void HardcodeEgreso(eEgreso lista_egresos[])
 {
+  int marca[]={1,1,2,3,2,2,3,4,1,1};
+  float importe[]= {100,200,100,300,100,100,200,200,100,100};
   int i;
+
   for(i=0;i<10;i++)
   {
-//    int marca[i]= {1,1,2,3,2,2,3,4,1,1};
- //   float importe[i]= {100,200,100,300,100,100,200,200,100,100};
+    lista_egresos[i].marca_auto=marca[i];
+    lista_egresos[i].importe=importe[i];
   }
 
 }
