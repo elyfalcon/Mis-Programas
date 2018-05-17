@@ -124,11 +124,12 @@ void MostrarPropietariosAutosAudi(ePropietario lista_prop[],int cant_prop,eIngre
 
     for(i=0;i<cant_prop;i++)
     {
+       if(lista_prop[i].idPropietario!=0)
        printf("\nId: %d  Nombre: %s",lista_prop[i].idPropietario,lista_prop[i].nombre_prop);
-        int j;
+       int j;
         if(lista_ingre!=NULL)
         {
-            for(j=0;j<cant_ingr;j++)
+               for(j=0;j<cant_ingr;j++)
             {
                 if(lista_prop[i].idPropietario==lista_ingre[j].propietario && lista_ingre[j].marca==3)
                 {
@@ -136,6 +137,8 @@ void MostrarPropietariosAutosAudi(ePropietario lista_prop[],int cant_prop,eIngre
                 }
 
             }
+
+
         }
 
     }

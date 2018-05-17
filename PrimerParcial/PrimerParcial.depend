@@ -130,3 +130,48 @@
 	"ingresos.h"
 	"egresos.h"
 
+1526477004 source:c:\eli\mis cosas\mis-programas\primerparcial\egresos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"egresos.h"
+
+1526477274 c:\eli\mis cosas\mis-programas\primerparcial\egresos.h
+
+1526513114 source:c:\eli\mis cosas\mis-programas\primerparcial\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"propietario.h"
+	"ingresos.h"
+	"egresos.h"
+
+1525695976 c:\eli\mis cosas\mis-programas\primerparcial\propietario.h
+
+1526479946 c:\eli\mis cosas\mis-programas\primerparcial\ingresos.h
+
+1526489482 source:c:\eli\mis cosas\mis-programas\primerparcial\ingresos.c
+	<stdio.h>
+	<stdlib.h>
+	"ingresos.h"
+
+1526512382 source:c:\eli\mis cosas\mis-programas\primerparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"propietario.h"
+	"ingresos.h"
+	"egresos.h"
+
+1526512274 c:\eli\mis cosas\mis-programas\primerparcial\funciones.h
+	"propietario.h"
+	"ingresos.h"
+	"egresos.h"
+
+1526059264 source:c:\eli\mis cosas\mis-programas\primerparcial\propietario.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"propietario.h"
+
