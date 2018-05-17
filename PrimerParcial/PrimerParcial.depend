@@ -130,15 +130,15 @@
 	"ingresos.h"
 	"egresos.h"
 
-1526477004 source:c:\eli\mis cosas\mis-programas\primerparcial\egresos.c
+1526573133 source:c:\eli\mis cosas\mis-programas\primerparcial\egresos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"egresos.h"
 
-1526477274 c:\eli\mis cosas\mis-programas\primerparcial\egresos.h
+1526573046 c:\eli\mis cosas\mis-programas\primerparcial\egresos.h
 
-1526513114 source:c:\eli\mis cosas\mis-programas\primerparcial\funciones.c
+1526577079 source:c:\eli\mis cosas\mis-programas\primerparcial\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -156,7 +156,7 @@
 	<stdlib.h>
 	"ingresos.h"
 
-1526512382 source:c:\eli\mis cosas\mis-programas\primerparcial\main.c
+1526579517 source:c:\eli\mis cosas\mis-programas\primerparcial\main.c
 	<stdio.h>
 	<stdlib.h>
 	"funciones.h"

@@ -52,21 +52,22 @@ int main()
                 ModificarUnaPersona(lista_propietario,30);
                 break;
             case 3:
-                idPropietario=PedirEntero("Ingrese el id del Propietario a borrar");
+                idPropietario=PedirEntero("Ingrese el id del Propietario a borrar: ");
                 BajaPropietario(lista_propietario,idPropietario,tam_ingresos,lista_ingresos,tam_ingresos,lista_egreso,20);
-
-               // BorrarUnaPersona(lista_propietario,idPropietario,30);
                 break;
             case 4:
-
+                IngresoAuto(lista_ingresos);
 
                 break;
             case 8:
-                //ListarPropietarios(lista_propietario,30);
+
                 MostrarPropietarioConSusAutos(lista_propietario,4,lista_ingresos,10);
                 break;
             case 9:
                 MostrarPropietariosAutosAudi(lista_propietario,tam_ingresos,lista_ingresos,tam_ingresos);
+                break;
+            case 10:
+                break;
             case 11:
                 seguir = 'n';
                 break;

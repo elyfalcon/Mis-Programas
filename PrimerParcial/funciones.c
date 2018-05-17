@@ -121,7 +121,6 @@ void MostrarPropietariosAutosAudi(ePropietario lista_prop[],int cant_prop,eIngre
     int i;
     if(lista_prop!=NULL)
     {
-
     for(i=0;i<cant_prop;i++)
     {
        if(lista_prop[i].idPropietario!=0)
@@ -133,14 +132,10 @@ void MostrarPropietariosAutosAudi(ePropietario lista_prop[],int cant_prop,eIngre
             {
                 if(lista_prop[i].idPropietario==lista_ingre[j].propietario && lista_ingre[j].marca==3)
                 {
-                printf("\n Patente: %s   Marca: %d",lista_ingre[j].patente,lista_ingre[j].marca);
+                printf("\n Patente: %s   Marca: AUDI",lista_ingre[j].patente);
                 }
-
             }
-
-
         }
-
     }
 }
     system("pause");
@@ -158,18 +153,17 @@ int buscarPorId(ePropietario lista_propietario[], int id,int cantidad)
         {
             if(id==lista_propietario[i].idPropietario)
             {
-                printf("La persona buscada es:");
-                printf("\n%d %s %s %s\n",lista_propietario[i].idPropietario,lista_propietario[i].nombre_prop,lista_propietario[i].direccion,lista_propietario[i].tarjeta);
-                system("pause");
+                printf("La persona buscada es:\n");
+                printf("\nID:%d Nombre: %s Direccion: %s Nro Tarjeta: %s\n",lista_propietario[i].idPropietario,lista_propietario[i].nombre_prop,lista_propietario[i].direccion,lista_propietario[i].tarjeta);
+               // system("pause");
                 flag=i;
                 break;
             }
-            else
+        /*    else
                 {
             printf("\nNo se encontro el propietario: ");
-                }
+                }*/
         }
-
   }
   return flag;
 }
@@ -197,7 +191,6 @@ int buscarPorIdIngresos(eIngresos lista_ingresos[], int id,int cantidad)//cantid
             printf("\nNo tiene autos ingresados: ");
                 }
         }
-
   }
   return flag;
 }
@@ -249,43 +242,46 @@ void BajaPropietario(ePropietario lista_prop[],int idProp,int cant_prop,eIngreso
     int indice;
     int cuenta=0;
     int cant_marca;
-    for(i=0;i<cant_prop;i++)
-    {
-       indice=buscarPorId(lista_prop,idProp,20);
 
-       if(indice!=-1)
-       {
-           printf("\nId: %d  Nombre: %s",lista_prop[indice].idPropietario,lista_prop[indice].nombre_prop);
-        int j;
-        for(j=0;j<cant_ingre;j++)
+    indice=buscarPorId(lista_prop,idProp,20);
+
+     if(indice!=-1)
+    {
+        for(i=0;i<cant_prop;i++)
         {
-            if(lista_prop[i].idPropietario==list_ingre[j].propietario)
+            int j;
+            for(j=0;j<cant_ingre;j++)
             {
-                printf("\n Patente: %s   Marca: %d",list_ingre[j].patente,list_ingre[j].marca);
-                cant_marca=cant_marca+1;
-            for(j=0;j<cant_egreso;j++)
-            {
-                if(list_ingre[j].marca==lista_egreso[i].marca_auto)
+                if(lista_prop[i].idPropietario==list_ingre[j].propietario)
+                {
+                    printf("\n Patente: %s   Marca: %d\n",list_ingre[j].patente,list_ingre[j].marca);
+                    //list_ingre[j].marca
+                    cant_marca=cant_marca+1;
+                for(j=0;j<cant_egreso;j++)
+                    {
+                    if(list_ingre[j].marca==lista_egreso[i].marca_auto)
                     cuenta=cant_marca*(lista_egreso[j].importe);
+                    }
+                }
             }
-            }
-        }
        }
     }
-    system("pause");
+        else
+      printf("\nNo existe el propietario ingresado: \n");
+
+       system("pause");
 }
-
-
 
 void IngresoAuto(eIngresos lista_ingresos[])
 {
    int indice;
    int idProp;
    int marca;
-   int SiExiste=0;
+   int SiExiste;
 
         idProp=PedirEntero("Ingrese el Id del Propietario: "); //llama a la funcion Pedir entero para el ingreso
         SiExiste=buscarPorIdIngresos(lista_ingresos,idProp,20);
+        printf("Valor de SiExiste: %d", SiExiste);
 
     if((SiExiste=-1))
         {
@@ -293,19 +289,19 @@ void IngresoAuto(eIngresos lista_ingresos[])
 
             if(indice>0)
             {
-            printf("Ingrese el nombre: ");
-            fflush(stdin);
-            scanf("%d",&lista_ingresos[indice].propietario);
+            lista_ingresos[indice].propietario=idProp;
             printf("\nIngrese la marca del auto ");
             fflush(stdin);
             scanf("%d",&lista_ingresos[indice].marca);
             lista_ingresos[indice].marca=marca;
+            printf("\nIngrese la patente: ");
+            gets(lista_ingresos[indice].patente);
             lista_ingresos[indice].id=indice;
-        }
+            }
         }
         else
         {
-            printf("\nEl Dni ya esta ingresado: \n");
+            printf("\nEl Propietario ya esta ingresado: \n");
             system("pause");
         }
 }
