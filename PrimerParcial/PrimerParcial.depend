@@ -40,22 +40,22 @@
 	<string.h>
 	"propietario.h"
 
-1525800154 source:c:\eli\utn\primerparcial\egresos.c
+1526477002 source:c:\eli\utn\primerparcial\egresos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"egresos.h"
 
-1525800154 c:\eli\utn\primerparcial\egresos.h
+1526477272 c:\eli\utn\primerparcial\egresos.h
 
-1525796045 source:c:\eli\utn\primerparcial\ingresos.c
+1526489480 source:c:\eli\utn\primerparcial\ingresos.c
 	<stdio.h>
 	<stdlib.h>
 	"ingresos.h"
 
-1525694960 c:\eli\utn\primerparcial\ingresos.h
+1526479944 c:\eli\utn\primerparcial\ingresos.h
 
-1525798354 source:c:\eli\utn\primerparcial\propietario.c
+1526059262 source:c:\eli\utn\primerparcial\propietario.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -63,14 +63,16 @@
 
 1525695976 c:\eli\utn\primerparcial\propietario.h
 
-1525797583 source:c:\eli\utn\primerparcial\funciones.c
+1526486005 source:c:\eli\utn\primerparcial\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 	"propietario.h"
+	"ingresos.h"
+	"egresos.h"
 
-1525798354 source:c:\eli\utn\primerparcial\main.c
+1526485762 source:c:\eli\utn\primerparcial\main.c
 	<stdio.h>
 	<stdlib.h>
 	"funciones.h"
@@ -78,6 +80,53 @@
 	"ingresos.h"
 	"egresos.h"
 
-1525797583 c:\eli\utn\primerparcial\funciones.h
+1526493826 c:\eli\utn\primerparcial\funciones.h
 	"propietario.h"
+	"ingresos.h"
+	"egresos.h"
+
+1526477004 source:c:\utn\jackie\primerparcial\egresos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"egresos.h"
+
+1526477274 c:\utn\jackie\primerparcial\egresos.h
+
+1526489482 source:c:\utn\jackie\primerparcial\ingresos.c
+	<stdio.h>
+	<stdlib.h>
+	"ingresos.h"
+
+1526479946 c:\utn\jackie\primerparcial\ingresos.h
+
+1526512380 source:c:\utn\jackie\primerparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"propietario.h"
+	"ingresos.h"
+	"egresos.h"
+
+1526512273 c:\utn\jackie\primerparcial\funciones.h
+	"propietario.h"
+	"ingresos.h"
+	"egresos.h"
+
+1525695976 c:\utn\jackie\primerparcial\propietario.h
+
+1526059264 source:c:\utn\jackie\primerparcial\propietario.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"propietario.h"
+
+1526513113 source:c:\utn\jackie\primerparcial\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"propietario.h"
+	"ingresos.h"
+	"egresos.h"
 

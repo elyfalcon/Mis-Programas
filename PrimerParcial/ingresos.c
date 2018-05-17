@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "ingresos.h"
-
+#define  ALPHA_ROMEO 1
+#define FERRARI 2
+#define AUDI 3
+#define OTRO 4
 
 void HardcodeIngresos(eIngresos lista_ingresos[])
 {

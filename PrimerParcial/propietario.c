@@ -18,8 +18,6 @@ void HardcodePersona(ePropietario lista_propietario[])
       strcpy(lista_propietario[i].tarjeta,tarjeta[i]);
       strcpy(lista_propietario[i].direccion,direccion[i]);
        }
-  //  for(i=0;i<4;i++)
-
 }
 
 

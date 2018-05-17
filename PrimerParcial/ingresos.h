@@ -12,7 +12,9 @@
 
 
 void HardcodeIngresos(eIngresos lista_ingresos[]);
-
-
+void IngresoAuto(eIngresos lista_ingresos[]);
+int buscarIngreso(eIngresos lista_ingresos[],int id);
+int buscarPorIdIngresos(eIngresos lista[], int ,int );
+//void MostrarUnAuto(ePropietario autos);
 
 #endif // INGRESOS_H_INCLUDED

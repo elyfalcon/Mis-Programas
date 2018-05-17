@@ -5,6 +5,10 @@
 #include "ingresos.h"
 #include "egresos.h"
 #define tam_ingresos 20
+#define ALPHA_ROMEO 1
+#define FERRARI 2
+#define AUDI 3
+#define OTRO 4
 
 int main()
 {
@@ -18,6 +22,8 @@ int main()
     eEgreso lista_egreso[30];
     Inicializa_Propietario(lista_propietario,30);
     HardcodePersona(lista_propietario);
+    HardcodeIngresos(lista_ingresos);
+    HardcodeEgreso(lista_egreso);
     ValidaMenu(opcion, 1,11);
 
      while(seguir=='s')
@@ -47,14 +53,20 @@ int main()
                 break;
             case 3:
                 idPropietario=PedirEntero("Ingrese el id del Propietario a borrar");
-                BorrarUnaPersona(lista_propietario,idPropietario,30);
+                BajaPropietario(lista_propietario,idPropietario,tam_ingresos,lista_ingresos,tam_ingresos,lista_egreso,20);
+
+               // BorrarUnaPersona(lista_propietario,idPropietario,30);
                 break;
             case 4:
 
+
                 break;
             case 8:
-                ListarPropietarios(lista_propietario,30);
+                //ListarPropietarios(lista_propietario,30);
+                MostrarPropietarioConSusAutos(lista_propietario,4,lista_ingresos,10);
                 break;
+            case 9:
+                MostrarPropietariosAutosAudi(lista_propietario,tam_ingresos,lista_ingresos,tam_ingresos);
             case 11:
                 seguir = 'n';
                 break;

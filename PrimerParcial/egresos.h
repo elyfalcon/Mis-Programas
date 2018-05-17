@@ -9,7 +9,8 @@ typedef struct
    float importe;
 }eEgreso;
 
-void HardcodeEgreso(eEgreso lista_egresos[]);
 
+void HardcodeEgreso(eEgreso lista_egresos[]);
+int BuscarPorMarca(eEgreso lista_egreso[],int);
 
 #endif // EGRESOS_H_INCLUDED

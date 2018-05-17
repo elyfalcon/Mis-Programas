@@ -16,4 +16,3 @@ void HardcodeEgreso(eEgreso lista_egresos[])
   }
 
 }
-
