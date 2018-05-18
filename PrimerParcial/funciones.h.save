@@ -15,7 +15,7 @@ void MostrarUnaPersona(ePropietario propietario);
 void MostrarPropietarioConSusAutos(ePropietario lista_prop[],int cant_prop,eIngresos lista_ingre[],int cant_ingr);
 void MostrarPropietariosAutosAudi(ePropietario lista_prop[],int cant_prop,eIngresos lista_ingre[],int cant_ingr);
 int ListarPropietarios(ePropietario lista_propietario[],int cantidad);
-void BajaPropietario(ePropietario lista_prop[],int indice,int cant_prop,eIngresos list_ingresos[],int cant_ingreso,eEgreso lista_egreso[], int cant_egreso);
+void BajaPropietario(ePropietario lista_prop[],int i,int cant_prop,eIngresos list_ingresos[],int cant_ingreso,eEgreso lista_egreso[], int cant_egreso);
 //int buscarPorId(ePropietario lista_propietario[], int id,int cantidad);
 int buscarPorId(ePropietario lista[], int ,int );
 //int buscarPorId(eIngresos lista[], int ,int );

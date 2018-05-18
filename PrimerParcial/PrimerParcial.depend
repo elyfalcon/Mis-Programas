@@ -175,3 +175,48 @@
 	<string.h>
 	"propietario.h"
 
+1526590590 source:c:\eli\utn\mis-programas\primerparcial\egresos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"egresos.h"
+
+1526590590 c:\eli\utn\mis-programas\primerparcial\egresos.h
+
+1526603540 source:c:\eli\utn\mis-programas\primerparcial\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"propietario.h"
+	"ingresos.h"
+	"egresos.h"
+
+1526590590 c:\eli\utn\mis-programas\primerparcial\propietario.h
+
+1526590590 c:\eli\utn\mis-programas\primerparcial\ingresos.h
+
+1526590590 source:c:\eli\utn\mis-programas\primerparcial\ingresos.c
+	<stdio.h>
+	<stdlib.h>
+	"ingresos.h"
+
+1526602799 source:c:\eli\utn\mis-programas\primerparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"propietario.h"
+	"ingresos.h"
+	"egresos.h"
+
+1526602908 c:\eli\utn\mis-programas\primerparcial\funciones.h
+	"propietario.h"
+	"ingresos.h"
+	"egresos.h"
+
+1526597031 source:c:\eli\utn\mis-programas\primerparcial\propietario.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"propietario.h"
+

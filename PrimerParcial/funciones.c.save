@@ -243,20 +243,23 @@ void ModificarUnaPersona(ePropietario lista_propietario[],int cantidad)
     }
 }
 
-void BajaPropietario(ePropietario lista_prop[],int indice,int cant_prop,eIngresos list_ingre[],int cant_ingre,eEgreso lista_egreso[],int cant_egreso)
+void BajaPropietario(ePropietario lista_prop[],int i,int cant_prop,eIngresos list_ingre[],int cant_ingre,eEgreso lista_egreso[],int cant_egreso)
 {
-    int j;
-
+    int i,j;
+    int indice;
     int cuenta=0;
     float marca1;
     float cant_marca;
 
-
-    printf("indice: %d",indice);
+   // indice=buscarPorId(lista_prop,idProp,20);
+   // printf("indice: %d",indice);
     system("pause");
 
      if(indice!=-1)
     {
+     //   for(i=0;i<cant_prop;i++)
+        //{
+          //  int j;
             for(j=0;j<cant_ingre;j++)
             {
                 if(lista_prop[indice].idPropietario==list_ingre[indice].propietario)

@@ -14,7 +14,6 @@ int main()
 {
     char seguir='s';
     int opcion;
-    int i;
     ePropietario lista_propietario[30];
     ePropietario propietario;
     int idPropietario;
