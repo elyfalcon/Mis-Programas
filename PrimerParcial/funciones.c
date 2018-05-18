@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdbool.h>
 #include "propietario.h"
 #include "ingresos.h"
 #include "egresos.h"
@@ -60,6 +61,24 @@ int PedirEntero(char mensaje[])
     fflush(stdin);
     }while(scanf("%d",&auxiliar)==0);
     return auxiliar;
+}
+char Responder(char mensaje[])
+{
+    char resp;
+    //int flag=-1;
+
+    printf("%s",mensaje);
+    fflush(stdin);
+    scanf("%s",&resp);
+    resp=toupper(resp);
+    while(resp!='S'&& resp!='N')
+    {
+      printf("\nDebe ingresar S(si) N(no)\n");
+      scanf("%s",&resp);
+      resp=toupper(resp);
+    }
+
+    return resp;
 }
 void AltaUnaxxxx(ePropietario lista_propietario[])
 
@@ -165,10 +184,6 @@ int buscarPorId(ePropietario lista_propietario[], int id,int cantidad)
                 flag=i;
                 break;
             }
-        /*    else
-                {
-            printf("\nNo se encontro el propietario: ");
-                }*/
         }
   }
   return flag;
@@ -250,31 +265,30 @@ void BajaPropietario(ePropietario lista_prop[],int indice,int cant_prop,eIngreso
     int cuenta=0;
     float marca1;
     float cant_marca;
-
-
-    printf("indice: %d",indice);
-    system("pause");
+    char resp='N';
 
      if(indice!=-1)
     {
             for(j=0;j<cant_ingre;j++)
             {
-                if(lista_prop[indice].idPropietario==list_ingre[indice].propietario)
+                if(lista_prop[indice].idPropietario==list_ingre[j].propietario)
                 {
-                    printf("\n Patente: %s   Marca: %d\n",list_ingre[indice].patente,list_ingre[indice].marca);
-                    //list_ingre[j].marca
-                 //   marca1=devolverHorasEstadia()*lista_egreso[i].importe;
-                 //   printf("Importe: %f",marca1);
-
-                for(j=0;j<cant_egreso;j++)
+                printf("\n Patente: %s   Marca: %d\n",list_ingre[indice].patente,list_ingre[indice].marca);
+                resp=Responder("\nEsta seguro que desea dar de baja al propietario?: S/N ");
+                if(resp=='S')
+                {
+                     printf("hoa");
+                     for(j=0;j<cant_egreso;j++)
                     {
-                    if(list_ingre[indice].marca==lista_egreso[indice].marca_auto)
-                    cuenta=cant_marca*(lista_egreso[j].importe);
-                    printf("Importe: %f",cuenta);
+                  //  if(list_ingre[indice].marca==lista_egreso[indice].marca_auto)
+
                     }
                 }
             }
     //   }//llave del segundo for
+                }
+
+
     }
         else
       printf("\nNo existe el propietario ingresado: \n");

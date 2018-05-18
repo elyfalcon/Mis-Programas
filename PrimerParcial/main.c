@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "funciones.h"
 #include "propietario.h"
 #include "ingresos.h"
@@ -53,7 +54,8 @@ int main()
                 ModificarUnaPersona(lista_propietario,30);
                 break;
             case 3:
-                idPropietario=PedirEntero("Ingrese el id del Propietario a borrar: ");
+                MostrarPropietarios(lista_propietario,tam_ingresos);
+                idPropietario=PedirEntero("\nIngrese el id del Propietario a borrar: ");
                 i=buscarPorId(lista_propietario,idPropietario,tam_ingresos);
                 BajaPropietario(lista_propietario,i,tam_ingresos,lista_ingresos,tam_ingresos,lista_egreso,20);
                 break;

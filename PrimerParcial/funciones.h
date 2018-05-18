@@ -22,6 +22,7 @@ int buscarPorId(ePropietario lista[], int ,int );
 //int buscarIngreso(eIngresos lista_ingresos[],int id,int cantidad);
 void ModificarUnaPersona(ePropietario lista_propietario[],int cantidad);
 int PedirEntero(char mensaje[]);
+char Responder(char mensaje[]);
 void BorrarUnaPersona(ePropietario lista[],int indice,int cantidad);
 int devolverHorasEstadia();
 //void IngresoAuto(eIngresos autos);

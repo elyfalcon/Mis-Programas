@@ -20,4 +20,17 @@ void HardcodePersona(ePropietario lista_propietario[])
        }
 }
 
+void MostrarPropietarios(ePropietario lista_propietario[],int cant_prop)
+{
+    int i;
+    printf("LISTADO DE PROPIETARIOS\n");
 
+    for(i=0;i<cant_prop;i++)
+    {
+        if(lista_propietario[i].idPropietario!=0)
+        {
+        printf("Id:%d  Nombre:  %s   Direccion:  %s\n",lista_propietario[i].idPropietario,lista_propietario[i].nombre_prop,lista_propietario[i].direccion);
+        }
+
+    }
+}

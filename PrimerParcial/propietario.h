@@ -13,7 +13,7 @@ typedef struct
 
 void HardcodePersona(ePropietario lista_propietario[]);
 
-
+void MostrarPropietarios(ePropietario ListarPropietario[],int);
 
 
 #endif // PROPIETARIO_H_INCLUDED
