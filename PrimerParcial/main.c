@@ -23,6 +23,8 @@ int main()
     eIngresos autos;
     eEgreso lista_egreso[30];
     Inicializa_Propietario(lista_propietario,30);
+    Inicializa_Autos(lista_ingresos,20);
+    Inicializa_Egreso(lista_egreso,20);
     HardcodePersona(lista_propietario);
     HardcodeIngresos(lista_ingresos);
     HardcodeEgreso(lista_egreso);
@@ -57,11 +59,18 @@ int main()
                 MostrarPropietarios(lista_propietario,tam_ingresos);
                 idPropietario=PedirEntero("\nIngrese el id del Propietario a borrar: ");
                 i=buscarPorId(lista_propietario,idPropietario,tam_ingresos);
-                BajaPropietario(lista_propietario,i,tam_ingresos,lista_ingresos,tam_ingresos,lista_egreso,20);
+                BajaPropietario(lista_propietario,i,10,lista_ingresos,tam_ingresos,lista_egreso,20);
                 break;
             case 4:
-                IngresoAuto(lista_ingresos);
-
+                IngresoAuto(lista_ingresos,tam_ingresos,lista_propietario,20);
+                break;
+            case 5:
+                EgresoAutos(lista_ingresos,tam_ingresos,lista_egreso,20,lista_propietario,10);
+                break;
+            case 6:
+                RecaudacionTotal(lista_egreso,20);
+                break;
+            case 7:
                 break;
             case 8:
 

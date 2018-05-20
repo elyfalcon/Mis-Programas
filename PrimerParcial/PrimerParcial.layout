@@ -2,9 +2,19 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
+	<File name="funciones.c" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="14785" topLine="512" />
+		</Cursor>
+	</File>
+	<File name="ingresos.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="347" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1832" topLine="38" />
+			<Cursor1 position="1935" topLine="51" />
 		</Cursor>
 	</File>
 	<File name="egresos.c" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -22,29 +32,19 @@
 			<Cursor1 position="1289" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="ingresos.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="347" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="funciones.c" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="6544" topLine="266" />
-		</Cursor>
-	</File>
 	<File name="propietario.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="912" topLine="5" />
 		</Cursor>
 	</File>
-	<File name="ingresos.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="170" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="propietario.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="290" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="ingresos.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="170" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
