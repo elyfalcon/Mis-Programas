@@ -184,7 +184,7 @@
 
 1526848824 c:\eli\utn\mis-programas\primerparcial\egresos.h
 
-1526853063 source:c:\eli\utn\mis-programas\primerparcial\funciones.c
+1526882653 source:c:\eli\utn\mis-programas\primerparcial\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -199,12 +199,12 @@
 
 1526824357 c:\eli\utn\mis-programas\primerparcial\ingresos.h
 
-1526830852 source:c:\eli\utn\mis-programas\primerparcial\ingresos.c
+1526876010 source:c:\eli\utn\mis-programas\primerparcial\ingresos.c
 	<stdio.h>
 	<stdlib.h>
 	"ingresos.h"
 
-1526852612 source:c:\eli\utn\mis-programas\primerparcial\main.c
+1526877485 source:c:\eli\utn\mis-programas\primerparcial\main.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
@@ -213,7 +213,7 @@
 	"ingresos.h"
 	"egresos.h"
 
-1526850128 c:\eli\utn\mis-programas\primerparcial\funciones.h
+1526880108 c:\eli\utn\mis-programas\primerparcial\funciones.h
 	"propietario.h"
 	"ingresos.h"
 	"egresos.h"

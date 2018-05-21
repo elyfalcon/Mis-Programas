@@ -7,9 +7,7 @@
 #include "ingresos.h"
 #include "egresos.h"
 #define ALPHA_ROMEO 1
-#define FERRARI 2
-#define AUDI 3
-#define OTRO 4
+
 
 
 
@@ -71,9 +69,6 @@ if(cantidad>0 && lista_ingresos !=NULL)
  return posicion;
 }
 
-
-
-
 int PedirEntero(char mensaje[])
 {
     int auxiliar;
@@ -103,36 +98,49 @@ char Responder(char mensaje[])
 
     return resp;
 }
-void AltaUnaxxxx(ePropietario lista_propietario[])
+void AltaUnaxxxx(ePropietario propietario[],int cantidad)
 
 {
    int indice;
-   int flag=-3;
-   int estado=-1;
-   int cantidad=50;
-   indice=obtenerEspacioLibre(lista_propietario,cantidad);
+   int flag=-1;
+   char resp='S';
 
-        if(indice!=-1)
+        while(resp=='S')
         {
-        printf("Ingrese el nombre del propietario: ");
-        fflush(stdin);
-        gets(lista_propietario[indice].nombre_prop);
-        printf("Ingrese el apellido del propietario: ");
-        fflush(stdin);
-        gets(lista_propietario[indice].ape_prop);
-        printf("Ingrese el apellido: ");
-        gets(lista_propietario[indice].direccion);
-        do{
-        printf("\nIngrese id del propietario: ");
-        fflush(stdin);
-       }while (scanf("%d",&lista_propietario[indice].idPropietario)==0);
-        printf("\nIngrese el numero de tarjeta:");
-        fflush(stdin);
-        gets(lista_propietario[indice].tarjeta);
-
-     //    lista[indice].estado=OCUPADO;
+            indice=obtenerEspacioLibre(propietario,cantidad);
+            if(indice!=-1)
+            {
+            printf("\n-----------ALTA DE PROPIETARIOS-------\n");
+            propietario[indice].idPropietario=indice+1;
+            printf("Ingrese el nombre del propietario: ");
+            fflush(stdin);
+            gets(propietario[indice].nombre_prop);
+            printf("Ingrese el apellido del propietario: ");
+            fflush(stdin);
+            gets(propietario[indice].ape_prop);
+            printf("Ingrese la direccion: ");
+            gets(propietario[indice].direccion);
+           /* do{
+                printf("\nIngrese id del propietario: ");
+                fflush(stdin);
+                }while (scanf("%d",&propietario[indice].idPropietario)==0);*/
+            printf("\nIngrese el numero de tarjeta:");
+            fflush(stdin);
+            gets(propietario[indice].tarjeta);
+            propietario[indice].estado=1;
+            flag=1;
+            resp=Responder("\nContinua ingresando otro propietario?: (S/N)");
         }
+        else
+        {
+            printf("\n--------No hay mas lugar, no se pudo ingresar:");
+        }
+        }
+
 }
+
+
+
 void AltaEgreso(eEgreso lista_egreso[],int marca,int importe,int limite)
 {
     int indice;
@@ -177,6 +185,7 @@ void MostrarUnaPersona(ePropietario propietario)
 void MostrarPropietarioConSusAutos(ePropietario lista_prop[],int cant_prop,eIngresos lista_ingre[],int cant_ingr)
 {
     int i;
+
     if(lista_prop!=NULL)
     {
 
@@ -230,7 +239,6 @@ int BuscarLibreEgreso(eEgreso lista_egreso[],int limite)
         {
             if(lista_egreso[i].marca_auto==0)
                 index=i;
-
         }
     return index;
 }
@@ -276,7 +284,7 @@ int buscarPorIdIngresos(eIngresos lista_ingresos[], int id,int cantidad)//cantid
                 break;
             }
         }
-        if(flag=-1)
+        if((flag=-1))
         printf("\El propietario no tiene autos ingresados:");
   }
   return flag;
@@ -286,16 +294,33 @@ void ModificarUnaPersona(ePropietario lista_propietario[],int cantidad)
 {
   int i;
   int index;
+  char resp='N';
+  ePropietario aux[10];
 
+  MostrarPropietarios(lista_propietario,cantidad);
   i=PedirEntero("Ingrese el id del propietario");
   index= buscarPorId(lista_propietario,i,cantidad);
   if(index!=-1)
     {
         lista_propietario[index].idPropietario = index+1;
         fflush(stdin);
+        aux[index]=lista_propietario[index];
         printf("\nIngrese el nuevo Numero de tarjeta:  ");
-        gets(lista_propietario[index].tarjeta);
         fflush(stdin);
+        gets(lista_propietario[index].tarjeta);
+        resp=Responder("\nConfirma la modificion?(S/N)");
+        if(resp=='S')
+        {
+            printf("\nPropietario modificado:");
+        }
+        else
+        {
+            printf("\nModificacion cancelada:");
+            lista_propietario[index]=aux[index];
+        }
+
+
+
 
     }
     else
@@ -303,72 +328,116 @@ void ModificarUnaPersona(ePropietario lista_propietario[],int cantidad)
         printf("Usuario no encontrado!!!");
     }
 }
+float Liquidacion(eIngresos vec[],eEgreso egreso[],int id,int tam)
+{
+    float importe=0;
+    float Tot;
+    int estadia;
+    int i;
+    int primeravez=0;
+
+
+    for(i=0;i<tam;i++)
+    {
+        if(vec[i].propietario==id)
+        {
+             estadia=devolverHorasEstadia();
+
+                    switch (vec[i].marca)
+                        {
+                    case 1:
+                        Tot=estadia*150;
+                        break;
+                    case 2:
+                        Tot=estadia *100;
+                        break;
+                    case 3:
+                        Tot=estadia*200;
+                        break;
+                    case 4:
+                        Tot                        case 4:
+                        Tot=estadia*50;
+                        break;
+                        }//fin switch
+
+                /*   MostrarIngresoPorid(vec,i);
+                   if(primeravez==0)
+                   {
+                       system("cls");
+                       printf("----------- TICKET ESTACIONAMIENTO----------- ");
+                       printf("\nEl propietario: %d",vec[i].propietario);
+                       primeravez=1;
+                   }
+                   printf("\n----------------------------------------------");
+                   printf("\n Tiempo de Estadia: %d",estadia);
+                   printf("\tTotal a abonar: %2.f\n",Tot);
+                    system("pause");*/
+            importe+=Tot;
+
+        }
+
+        }
+return importe;
+    }
+
+
+
 
 void BajaPropietario(ePropietario lista_prop[],int indice,int cant_prop,eIngresos list_ingre[],int cant_ingre,eEgreso lista_egreso[],int cant_egreso)
 {
-    int j;
-
+    int j,i;
     int cuenta=0;
     float marca1;
-    char PropAutos[20];
-    float ImporteApagar[4];
+    float Total_pagar;
     char resp='N';
-    int tiempo_estadia[20];
+    int estadia=0;
+    int PropAux;
+    int primeravez=0;
+    int id;
 
-     if(indice!=-1)
-    {
-            for(j=0;j<cant_ingre;j++)
-            {
-                if(lista_prop[indice].idPropietario==list_ingre[j].propietario)
+
+    MostrarPropietarios(lista_prop,cant_prop);
+    id=PedirEntero("\nIngrese el id a dar de baja: ");
+    indice=buscarPorId(lista_prop,id,cant_prop);
+
+        if(indice!=-1)
+        {
+            resp=Responder("\nEsta seguro que desea dar de baja al propietario?: S/N ");
+            if(resp=='S')
                 {
-                //printf("\n Patente: %s   Marca: %d\n",list_ingre[j].patente,list_ingre[j].marca);
-                muestra_datos_Propietario_Autos(lista_prop[indice],list_ingre[j]);
+                    lista_prop[indice].estado=-1;
+                   Total_pagar=Liquidacion(list_ingre,lista_egreso,indice,cant_ingre);
+                   if(Total_pagar!=0)
+                    printf("\nEl total a pagar: %2.f\n",Total_pagar);
+                   else
+                    printf("\nEl propietario no tiene deuda\n");
+
+
                 }
-                resp=Responder("\nEsta seguro que desea dar de baja al propietario?: S/N ");
-                if(resp=='S')
-                {
-                     for(j=0;j<cant_ingre;j++)
-                    {
-                     if(list_ingre[indice].marca==lista_egreso[j].marca_auto && list_ingre[j].id!=0)
-                     {
-                        // strcpy(PropAutos[j],list_ingre[j].propietario);
-                         tiempo_estadia[j]=devolverHorasEstadia();
-                         list_ingre[j].id=0;
-                         lista_prop[j].idPropietario=0;
+                 else{
+                        printf("\nBaja Cancelada");}
+}
 
-                         switch (list_ingre[j].marca)
-                         {
-                         case 1:
-                           ImporteApagar[j]=(tiempo_estadia[j])* 150;
-                           break;
-                         case 2:
-                            ImporteApagar[j]=tiempo_estadia[j]*120;
-                            break;
-                         case 3:
-                            ImporteApagar[j]=tiempo_estadia[j]*100;
-                            break;
-                         case 4:
-                            ImporteApagar[j]=tiempo_estadia[j]*80;
-                            break;
-                         }//fin switch
-                        } //fin if lista_ingre
-                 printf("\nIMPORTE A PAGAR:");
-                 printf("Tiempo de estadia: %d  Importe a pagar: $%f",tiempo_estadia[j],ImporteApagar[j]);
-                 system("pause");
-
-                    }//fin for(j)
-                }//fin resp=si
-        //    }//fin if igualdad porpietario con ingresos
-
-    //   }//llave del segundo for
-                }
-
-
-    }
-        else
-      printf("\nNo existe el propietario ingresado: \n");
+            else
+            printf("\nNo existe el propietario ingresado: \n");
 
        system("pause");
+
+    }
+
+
+
+void ListarPropietarios(ePropietario lista[],int limite)
+{
+    int i;
+    if(lista!=NULL)
+        for(i=0;i<limite;i++)
+    {
+        if(lista[i].estado==1)
+        {
+            printf("\nIdPropietario: %d\t\tNombre: %s\tApellido: %s\tTarjeta: %s",lista[i].idPropietario,lista[i].nombre_prop,lista[i].ape_prop,lista[i].tarjeta);
+        }
+    }
 }
 
 void IngresoAuto(eIngresos lista_ingresos[],int cant_autos,ePropietario lista_propietarios[],int cant_prop)
@@ -401,6 +470,7 @@ void IngresoAuto(eIngresos lista_ingresos[],int cant_autos,ePropietario lista_pr
                  flagExiste=1;
                  lista_ingresos[i].id=indice;
                  lista_ingresos[i].propietario=lista_propietarios[indice].idPropietario;
+                 ListarPropietarios(lista_propietarios,cant_prop);
                  printf("\nIngrese la patente:");
                  fflush(stdin);
                  gets(lista_ingresos[i].patente);
@@ -454,6 +524,30 @@ printf("\n\n=========== AUTO INGRESADO ==============");
 
 
 }
+void ListarPropietarioYAuto(ePropietario lista[],eIngresos ingreso[],int cant_prop,int cant_ingre)
+{
+    int i;
+    int id;
+    int indice;
+    char marca[10];
+    system("cls");
+    id=PedirEntero("\nIngrese el Id del propietario: ");
+    indice=buscarPorId(lista,id,cant_prop);
+
+    if(indice!=-1)
+    {
+        for(i=0;i<cant_ingre;i++)
+        {
+            if(lista[indice].idPropietario==ingreso[i].propietario && ingreso[i].estado==1)
+            {
+            printf("\nId: %d\t\tPatente: %s\t\t",ingreso[i].propietario,ingreso[i].patente);
+            MarcaAutoaNombre(ingreso[i].marca,marca);
+            printf("\tMarca: %s",marca);
+            }
+
+        }
+    }
+}
 void MostrarIngresoAuto(eIngresos autos)
 {
   char marca[20];
@@ -461,6 +555,13 @@ void MostrarIngresoAuto(eIngresos autos)
   MarcaAutoaNombre(autos.marca,marca);
     printf("\nIdAuto: %d\t IdPropietario: %d\t Patente: %s\t Marca: %s\n",autos.id,autos.propietario,autos.patente,marca);
 }
+void MostrarIngresoPorid(eIngresos autos[],int id)
+{
+    char marca[10];
+    MarcaAutoaNombre(autos[id].marca,marca);
+    printf("\nIdAuto: %d\t IdPropietario: %d\t Patente: %s\t Marca: %s\n",autos[id].id,autos[id].propietario,autos[id].patente,marca);
+}
+
 
 void ListarIngresoAuto(eIngresos lista_ingreso[],int limite)
 {
@@ -537,7 +638,7 @@ void EgresoAutos(eIngresos lista_ingresos[],int cant_ingreso,eEgreso lista_egres
                    }
                    printf("\n----------------------------------------------");
                    printf("\n Tiempo de Estadia: %d",estadia);
-                   printf("\tTotal a abonar: %d\n",Total_pagar);
+                   printf("\tTotal a abonar: %2.f\n",Total_pagar);
                     system("pause");
                 }//fin for
             }//fin if lista
@@ -594,24 +695,138 @@ void RecaudacionTotal(eEgreso lista[],int limite)
     int cantidad=0;
     float total=0;
 
-    if(limite>0 && lista!=NULL)
-    {
+
         system("cls");
-        printf("\----------------------------------------------\n");
+        printf("----------------------------------------------\n");
         printf("-------RECAUDACION TOTAL------------------------\n");
         for(i=0;i<limite;i++)
         {
             if(lista[i].importe>0)
             {
+            total+=lista[i].importe;
             char marca[10];
             cantidad++;
             MarcaAutoaNombre(lista[i].marca_auto,marca);
-            printf("\n\t Marca: %s\t\t Importe: %f",marca,lista[i].importe);
-            total+=lista[i].importe;
+            printf("\n\t Marca: %s\t\t Importe: $ %2.f",marca,lista[i].importe);
+           //total+=lista[i].importe;
 
             }
         }
-        printf("\n\t\t--Cantidad de Autos: %d\t\tImporte total: %f",cantidad,total);
+        printf("\n\t\t--Cantidad de Autos: %d\t\tImporte total: $ %2.f\n",cantidad,total);
         system("pause");
-    }
+
 }
+void RecaudacionPorMarca(eEgreso lista[],int limite)
+{
+    int i;
+    float importe[4]={0};
+    float total=0;
+
+    system("cls");
+        printf("\n--------------------------------------------------------\n");
+        printf("-------RECAUDACION TOTAL POR MARCA------------------------\n");
+        printf("---------------------------------------------------------\n");
+
+        for(i=0;i<limite;i++)
+        {
+            if(lista[i].importe>0)
+                total+=lista[i].importe;
+            {
+                switch(lista[i].marca_auto)
+                {
+                case 1:
+                    importe[0]+=lista[i].importe;
+                    break;
+                case 2:
+                    importe[1]+=lista[i].importe;
+                    break;
+                case 3:
+                    importe[2]+=lista[i].importe;
+                    break;
+                case 4:
+                    importe[3]+=lista[i].importe;
+                    break;
+                }//fin switch
+
+            }//fin if
+
+        }
+
+        printf("\n--El total recaudado de ALPHA_ROMEO: %2.f\t\t",importe[0]);
+        printf("\n--El total recaudado de FERRARI: %2.f\t\t",importe[1]);
+        printf("\n--El total recaudado de AUDI: %2.f\t\t",importe[2]);
+        printf("\n--El total recaudado de OTRAS MARCAS: %2.f\t\t",importe[3]);
+        printf("\n--El Total recaudado es: %2.f\n",total);
+        system("pause");
+
+    }
+void ListarAutosYPropietarios(eIngresos lista[],int cant_ingr,ePropietario vec[],int cant_prop)
+{
+int i,j;
+eIngresos auxiliar;
+
+for(i=0;i<cant_ingr-1;i++) //ordeno
+{
+    for(j=i+1;j<cant_ingr;j++)
+    {
+        if(strcmp(lista[i].patente,lista[j].patente)>0)
+        {
+            auxiliar=lista[i];
+            lista[i]=lista[j];
+            lista[j]=auxiliar;
+        }
+    }
+
+}//fin for
+system("cls");
+printf("\n\t\t\tLISTADO DE PATENTES Y SUS PROPIETARIOS");
+for(i=0;i<cant_ingr;i++)
+{
+    if(lista[i].estado==1)
+    {
+
+    printf("\nPatente: %s\t\t",lista[i].patente);
+    for(j=0;j<cant_prop;j++)
+    {
+        if(lista[i].propietario==vec[j].idPropietario && vec[j].estado==1)
+        {
+            MostrarUnaPersona(vec[j]);
+           // printf("\n");
+            printf("\n----------------------------------------------------");
+        }
+    }
+    }
+
+}
+system("pause");
+
+
+
+}
+void ListarPropActivos(ePropietario lista[],int limite)
+{
+    int i;
+    for(i=0;i<limite;i++)
+    {
+        if(lista[i].estado==1)
+        {
+            MostrarUnaPersona(lista[i]);
+        }
+    }
+    system("pause");
+}
+
+void ListarPropBajas(ePropietario lista[],int limite)
+{
+     int i;
+    for(i=0;i<limite;i++)
+    {
+        if(lista[i].estado==-1)
+        {
+            MostrarUnaPersona(lista[i]);
+        }
+    }
+    system("pause");
+}
+
+
