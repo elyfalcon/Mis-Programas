@@ -11,7 +11,7 @@
     int propietario;
     int deltaT;
     int importe;
-
+    
 }eIngresos;
 
 

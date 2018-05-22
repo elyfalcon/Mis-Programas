@@ -14,6 +14,6 @@ typedef struct
 
 void HardcodeEgreso(eEgreso lista_egresos[]);
 int BuscarPorMarca(eEgreso lista_egreso[],int);
-void Inicializa_Egreso(eEgreso lista[],int);
+void Inicializa_Egreso(eEgreso lista,int);
 int devolverHorasEstadia();
 #endif // EGRESOS_H_INCLUDED

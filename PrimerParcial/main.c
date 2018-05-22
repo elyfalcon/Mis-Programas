@@ -5,7 +5,8 @@
 #include "propietario.h"
 #include "ingresos.h"
 #include "egresos.h"
-#define tam_ingresos 20
+#define tam_ingresos 15
+#define cant_propietarios 20
 #define ALPHA_ROMEO 1
 #define FERRARI 2
 #define AUDI 3
@@ -16,17 +17,19 @@ int main()
     char seguir='s';
     int opcion;
     int i;
-    ePropietario lista_propietario[30];
+    ePropietario lista_propietario[cant_propietarios];
     ePropietario propietario;
     int idPropietario;
     eIngresos lista_ingresos[tam_ingresos];
     eIngresos autos;
     eEgreso lista_egreso[30];
-    Inicializa_Propietario(lista_propietario,30);
+    Inicializa_Propietario(lista_propietario,cant_propietarios);
+    Inicializa_Autos(lista_ingresos,tam_ingresos);
+    Inicializa_Egreso(lista_egreso,tam_ingresos);
     HardcodePersona(lista_propietario);
     HardcodeIngresos(lista_ingresos);
     HardcodeEgreso(lista_egreso);
-    ValidaMenu(opcion, 1,11);
+    ValidaMenu(opcion, 1,13);
 
      while(seguir=='s')
     {
@@ -40,39 +43,52 @@ int main()
         printf("7- Recaudacion total por marca\n");
         printf("8- Listar Propietario\n");
         printf("9- Listar Propietario con auto marca Audi\n");
-        printf("10- Listar Autos con sus propietarios\n\n");
-        printf("11- Salir\n\n");
+        printf("10- Listar Autos con sus propietarios\n");
+        printf("11- Listar propietarios\n\n");
+        printf("12- Listar propietarios y autos\n");
+        printf("13- Salir\n\n");
 
         scanf("%d",&opcion);
-        ValidaMenu(opcion,0,11);
+        ValidaMenu(opcion,0,12);
         switch(opcion)
         {
             case 1:
-                 AltaUnaxxxx(lista_propietario);
+                 AltaUnaxxxx(lista_propietario,cant_propietarios);
                 break;
             case 2:
-                ModificarUnaPersona(lista_propietario,30);
+                ModificarUnaPersona(lista_propietario,cant_propietarios);
                 break;
             case 3:
-                MostrarPropietarios(lista_propietario,tam_ingresos);
-                idPropietario=PedirEntero("\nIngrese el id del Propietario a borrar: ");
-                i=buscarPorId(lista_propietario,idPropietario,tam_ingresos);
-                BajaPropietario(lista_propietario,i,tam_ingresos,lista_ingresos,tam_ingresos,lista_egreso,20);
+                BajaPropietario(lista_propietario,i,10,lista_ingresos,tam_ingresos,lista_egreso,tam_ingresos);
                 break;
             case 4:
-                IngresoAuto(lista_ingresos);
-
+                IngresoAuto(lista_ingresos,tam_ingresos,lista_propietario,tam_ingresos);
+                break;
+            case 5:
+                EgresoAutos(lista_ingresos,tam_ingresos,lista_egreso,20,lista_propietario,tam_ingresos);
+                break;
+            case 6:
+                RecaudacionTotal(lista_egreso,tam_ingresos);
+                break;
+            case 7:
+                RecaudacionPorMarca(lista_egreso,tam_ingresos);
                 break;
             case 8:
-
-                MostrarPropietarioConSusAutos(lista_propietario,20,lista_ingresos,10);
+                ListarPropietarioYAuto(lista_propietario,lista_ingresos,20,tam_ingresos);
                 break;
             case 9:
                 MostrarPropietariosAutosAudi(lista_propietario,tam_ingresos,lista_ingresos,tam_ingresos);
                 break;
             case 10:
+                ListarAutosYPropietarios(lista_ingresos,tam_ingresos,lista_propietario,20);
                 break;
             case 11:
+                ListarPropietarios(lista_propietario,cant_propietarios);
+                break;
+            case 12:
+                MostrarPropietarioConSusAutos(lista_propietario,cant_propietarios,lista_ingresos,tam_ingresos);
+                break;
+            case 13:
                 seguir = 'n';
                 break;
             default:

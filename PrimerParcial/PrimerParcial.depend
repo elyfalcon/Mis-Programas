@@ -1,40 +1,47 @@
 # depslib dependency file v1.0
-1525695157 source:c:\test\elifalcon\primerparcial\egresos.c
+1526909561 source:c:\test\elifalcon\primerparcial\egresos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"egresos.h"
 
-1525700504 source:c:\test\elifalcon\primerparcial\funciones.c
+1526910144 source:c:\test\elifalcon\primerparcial\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
+	<stdbool.h>
 	"propietario.h"
+	"ingresos.h"
+	"egresos.h"
 
-1525695974 c:\test\elifalcon\primerparcial\propietario.h
+1526824358 c:\test\elifalcon\primerparcial\propietario.h
+	"ingresos.h"
 
-1525695266 source:c:\test\elifalcon\primerparcial\ingresos.c
+1526876012 source:c:\test\elifalcon\primerparcial\ingresos.c
 	<stdio.h>
 	<stdlib.h>
 	"ingresos.h"
 
-1525694958 c:\test\elifalcon\primerparcial\egresos.h
+1526848826 c:\test\elifalcon\primerparcial\egresos.h
 
-1525694958 c:\test\elifalcon\primerparcial\ingresos.h
+1526824358 c:\test\elifalcon\primerparcial\ingresos.h
 
-1525700628 source:c:\test\elifalcon\primerparcial\main.c
+1526908486 source:c:\test\elifalcon\primerparcial\main.c
 	<stdio.h>
 	<stdlib.h>
+	<stdbool.h>
 	"funciones.h"
 	"propietario.h"
 	"ingresos.h"
 	"egresos.h"
 
-1525700652 c:\test\elifalcon\primerparcial\funciones.h
+1526880110 c:\test\elifalcon\primerparcial\funciones.h
 	"propietario.h"
+	"ingresos.h"
+	"egresos.h"
 
-1525695974 source:c:\test\elifalcon\primerparcial\propietario.c
+1526905115 source:c:\test\elifalcon\primerparcial\propietario.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -176,46 +183,49 @@
 	<string.h>
 	"propietario.h"
 
-1526590590 source:c:\eli\utn\mis-programas\primerparcial\egresos.c
+1526853077 source:c:\eli\utn\mis-programas\primerparcial\egresos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"egresos.h"
 
-1526590590 c:\eli\utn\mis-programas\primerparcial\egresos.h
+1526848824 c:\eli\utn\mis-programas\primerparcial\egresos.h
 
-1526603540 source:c:\eli\utn\mis-programas\primerparcial\funciones.c
+1526882653 source:c:\eli\utn\mis-programas\primerparcial\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
+	<stdbool.h>
 	"propietario.h"
 	"ingresos.h"
 	"egresos.h"
 
-1526590590 c:\eli\utn\mis-programas\primerparcial\propietario.h
+1526824357 c:\eli\utn\mis-programas\primerparcial\propietario.h
+	"ingresos.h"
 
-1526590590 c:\eli\utn\mis-programas\primerparcial\ingresos.h
+1526824357 c:\eli\utn\mis-programas\primerparcial\ingresos.h
 
-1526590590 source:c:\eli\utn\mis-programas\primerparcial\ingresos.c
+1526876010 source:c:\eli\utn\mis-programas\primerparcial\ingresos.c
 	<stdio.h>
 	<stdlib.h>
 	"ingresos.h"
 
-1526602799 source:c:\eli\utn\mis-programas\primerparcial\main.c
+1526877485 source:c:\eli\utn\mis-programas\primerparcial\main.c
 	<stdio.h>
 	<stdlib.h>
+	<stdbool.h>
 	"funciones.h"
 	"propietario.h"
 	"ingresos.h"
 	"egresos.h"
 
-1526602908 c:\eli\utn\mis-programas\primerparcial\funciones.h
+1526880108 c:\eli\utn\mis-programas\primerparcial\funciones.h
 	"propietario.h"
 	"ingresos.h"
 	"egresos.h"
 
-1526597031 source:c:\eli\utn\mis-programas\primerparcial\propietario.c
+1526830677 source:c:\eli\utn\mis-programas\primerparcial\propietario.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
