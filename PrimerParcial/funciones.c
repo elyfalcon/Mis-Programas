@@ -134,8 +134,13 @@ void AltaUnaxxxx(ePropietario propietario[],int cantidad)
         else
         {
             printf("\n--------No hay mas lugar, no se pudo ingresar:");
+<<<<<<< HEAD
         }
         }
+=======
+        }
+        }
+>>>>>>> 514eec82c68f2f988135cbd6595b6a8f73b9aa2b
 
 }
 
@@ -145,7 +150,10 @@ void AltaEgreso(eEgreso lista_egreso[],int marca,int importe,int limite)
 {
     int indice;
     indice=BuscarLibreEgreso(lista_egreso,limite);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 514eec82c68f2f988135cbd6595b6a8f73b9aa2b
     if(indice>=0)
     {
         lista_egreso[indice].marca_auto=marca;
@@ -172,7 +180,11 @@ void MarcaAutoaNombre(int num_marca,char marca[])
     case 3:
         strcpy(marca,"AUDI");
         break;
+<<<<<<< HEAD
     case 4:
+=======
+    default:
+>>>>>>> 514eec82c68f2f988135cbd6595b6a8f73b9aa2b
        strcpy(marca,"OTRAS_MARCAS");
         break;
 
@@ -390,15 +402,22 @@ void BajaPropietario(ePropietario lista_prop[],int indice,int cant_prop,eIngreso
 
         if(indice!=-1)
         {
+<<<<<<< HEAD
             resp=Responder("\nEsta seguro que desea egresar al propietario?: S/N ");
+=======
+            resp=Responder("\nEsta seguro que desea dar de baja al propietario?: S/N ");
+>>>>>>> 514eec82c68f2f988135cbd6595b6a8f73b9aa2b
             if(resp=='S')
                 {
                     lista_prop[indice].estado=-1;
                    Total_pagar=Liquidacion(list_ingre,lista_egreso,indice,cant_ingre);
                    if(Total_pagar!=0)
                     printf("\nEl total a pagar: %2.f\n",Total_pagar);
+<<<<<<< HEAD
                    // AltaEgreso(lista_egreso,list_ingres[i].marca,Total_pagar,cant_egreso);
 
+=======
+>>>>>>> 514eec82c68f2f988135cbd6595b6a8f73b9aa2b
                    else
                     printf("\nEl propietario no tiene deuda\n");
 
@@ -421,14 +440,23 @@ void ListarPropietarios(ePropietario lista[],int limite)
 {
     int i;
     if(lista!=NULL)
+<<<<<<< HEAD
         system("cls");
+=======
+>>>>>>> 514eec82c68f2f988135cbd6595b6a8f73b9aa2b
         for(i=0;i<limite;i++)
     {
         if(lista[i].estado==1)
         {
+<<<<<<< HEAD
             printf("\nIdPropietario: %d\t\tNombre: %s\t\tTarjeta: %s",lista[i].idPropietario,lista[i].nombre_prop,lista[i].tarjeta);
         }
     }getch();
+=======
+            printf("\nIdPropietario: %d\t\tNombre: %s\tApellido: %s\tTarjeta: %s",lista[i].idPropietario,lista[i].nombre_prop,lista[i].ape_prop,lista[i].tarjeta);
+        }
+    }
+>>>>>>> 514eec82c68f2f988135cbd6595b6a8f73b9aa2b
 }
 
 void IngresoAuto(eIngresos lista_ingresos[],int cant_autos,ePropietario lista_propietarios[],int cant_prop)
@@ -465,14 +493,21 @@ void IngresoAuto(eIngresos lista_ingresos[],int cant_autos,ePropietario lista_pr
                  printf("\nIngrese la patente:");
                  fflush(stdin);
                  gets(lista_ingresos[i].patente);
+<<<<<<< HEAD
                  printf("\nIngrese la marca:\n");
+=======
+                 printf("\nIngrese la marca:");
+>>>>>>> 514eec82c68f2f988135cbd6595b6a8f73b9aa2b
                  do
                  {
                      printf("\n1- ALPHA_ROMEO");
                      printf("\n2- FERRARI");
                      printf("\n3- AUDI");
                      printf("\n4- OTRAS MARCAS\t");
+<<<<<<< HEAD
                      fflush(stdin);
+=======
+>>>>>>> 514eec82c68f2f988135cbd6595b6a8f73b9aa2b
                      scanf("%d",&marca);
                      switch (marca)
                      {
@@ -513,8 +548,13 @@ if(flaglugar==0)
 
 else if (flagExiste==1)
 printf("\n\n=========== AUTO INGRESADO ==============");
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> 514eec82c68f2f988135cbd6595b6a8f73b9aa2b
 }
 void ListarPropietarioYAuto(ePropietario lista[],eIngresos ingreso[],int cant_prop,int cant_ingre)
 {
@@ -539,7 +579,10 @@ void ListarPropietarioYAuto(ePropietario lista[],eIngresos ingreso[],int cant_pr
 
         }
     }
+<<<<<<< HEAD
     system("pause");
+=======
+>>>>>>> 514eec82c68f2f988135cbd6595b6a8f73b9aa2b
 }
 void MostrarIngresoAuto(eIngresos autos)
 {
@@ -574,12 +617,20 @@ void ListarIngresoAuto(eIngresos lista_ingreso[],int limite)
 
 void EgresoAutos(eIngresos lista_ingresos[],int cant_ingreso,eEgreso lista_egreso[],int cant_egreso,ePropietario lista[],int cant_prop)
 {
+<<<<<<< HEAD
     int i=0,j;
     int aux;
     int estadia;
     int id;
     int indice=0;
     float Total_pagar;
+=======
+    int i,j;
+    int estadia;
+    int id;
+    int indice=0;
+    int Total_pagar;
+>>>>>>> 514eec82c68f2f988135cbd6595b6a8f73b9aa2b
     int PropAux;
     int flagIngreso=0;
     int primeravez=0;
@@ -591,6 +642,7 @@ void EgresoAutos(eIngresos lista_ingresos[],int cant_ingreso,eEgreso lista_egres
         id=PedirEntero("\nIngrese el Id del auto que deja el estacionamiento:");
         for(j=0;j<cant_ingreso;j++)
         {
+<<<<<<< HEAD
             if(lista_ingresos[j].id==id)
                 indice=j;
                 break;
@@ -598,6 +650,14 @@ void EgresoAutos(eIngresos lista_ingresos[],int cant_ingreso,eEgreso lista_egres
      //   indice=buscarPorIdIngresos(lista_ingresos,id,20); revisar por que corchos no funciona
 
         if(indice>=0)
+=======
+            if(lista_ingresos[j].propietario==id)
+                indice=j;
+        }
+     //   indice=buscarPorIdIngresos(lista_ingresos,id,20); revisar por que corchos no funciona
+
+        if(indice>0)
+>>>>>>> 514eec82c68f2f988135cbd6595b6a8f73b9aa2b
         {
         for(i=0;i<cant_prop;i++)
         {
@@ -606,7 +666,10 @@ void EgresoAutos(eIngresos lista_ingresos[],int cant_ingreso,eEgreso lista_egres
             {
                estadia=devolverHorasEstadia();
                PropAux=lista[i].idPropietario;
+<<<<<<< HEAD
                aux=i;
+=======
+>>>>>>> 514eec82c68f2f988135cbd6595b6a8f73b9aa2b
 
                 switch (lista_ingresos[i].marca)
                 {
@@ -614,13 +677,21 @@ void EgresoAutos(eIngresos lista_ingresos[],int cant_ingreso,eEgreso lista_egres
                  Total_pagar=estadia*150;
                  break;
                 case 2:
+<<<<<<< HEAD
                     Total_pagar=estadia *175;
+=======
+                    Total_pagar=estadia *100;
+>>>>>>> 514eec82c68f2f988135cbd6595b6a8f73b9aa2b
                     break;
                 case 3:
                     Total_pagar=estadia*200;
                     break;
                 case 4:
+<<<<<<< HEAD
                 Total_pagar=estadia*250;
+=======
+                Total_pagar=estadia*50;
+>>>>>>> 514eec82c68f2f988135cbd6595b6a8f73b9aa2b
                 break;
                 }//fin switch
 
@@ -641,11 +712,19 @@ void EgresoAutos(eIngresos lista_ingresos[],int cant_ingreso,eEgreso lista_egres
 
         }//fin for
         resp=Responder("Confirma la baja?: S/N");
+<<<<<<< HEAD
         if(resp=='S')
         {
             lista_ingresos[i].estado=0;
             AltaEgreso(lista_egreso,lista_ingresos[i].marca,Total_pagar,cant_egreso);
           //  ListarEgresos(lista_egreso,cant_egreso);
+=======
+        if(resp='S')
+        {
+            lista_ingresos[i].estado=0;
+            AltaEgreso(lista_egreso,lista_ingresos[i].marca,Total_pagar,cant_egreso);
+            ListarEgresos(lista_egreso,cant_egreso);
+>>>>>>> 514eec82c68f2f988135cbd6595b6a8f73b9aa2b
             printf("\n-----EGRESO REALIZADO------------\n");
         }
         if(flagIngreso==0)
@@ -657,7 +736,11 @@ void EgresoAutos(eIngresos lista_ingresos[],int cant_ingreso,eEgreso lista_egres
 void ListarUnEgreso(eEgreso autos)
 {
     char marca[20];
+<<<<<<< HEAD
     printf("\nImporte: %2.f",autos.importe);
+=======
+    printf("\nImporte: %f",autos.importe);
+>>>>>>> 514eec82c68f2f988135cbd6595b6a8f73b9aa2b
     MarcaAutoaNombre(autos.marca_auto,marca);
     printf("\tMarca: %s\n",marca);
 
@@ -687,10 +770,16 @@ int devolverHorasEstadia()
 }
 void RecaudacionTotal(eEgreso lista[],int limite)
 {
+<<<<<<< HEAD
     int i=0;
     int cantidad=0;
     float total=0;
     char marca[20];
+=======
+    int i;
+    int cantidad=0;
+    float total=0;
+>>>>>>> 514eec82c68f2f988135cbd6595b6a8f73b9aa2b
 
 
         system("cls");
@@ -698,6 +787,7 @@ void RecaudacionTotal(eEgreso lista[],int limite)
         printf("-------RECAUDACION TOTAL------------------------\n");
         for(i=0;i<limite;i++)
         {
+<<<<<<< HEAD
             if(lista[i].importe>=0)
             {
             total+=lista[i].importe;
@@ -706,6 +796,16 @@ void RecaudacionTotal(eEgreso lista[],int limite)
             MarcaAutoaNombre(lista[i].marca_auto,marca);
 
             printf("\n\t Marca: %s\t\t Importe: $ %2.f",marca,lista[i].importe);
+=======
+            if(lista[i].importe>0)
+            {
+            total+=lista[i].importe;
+            char marca[10];
+            cantidad++;
+            MarcaAutoaNombre(lista[i].marca_auto,marca);
+            printf("\n\t Marca: %s\t\t Importe: $ %2.f",marca,lista[i].importe);
+           //total+=lista[i].importe;
+>>>>>>> 514eec82c68f2f988135cbd6595b6a8f73b9aa2b
 
             }
         }

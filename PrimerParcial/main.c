@@ -5,7 +5,11 @@
 #include "propietario.h"
 #include "ingresos.h"
 #include "egresos.h"
+<<<<<<< HEAD
 #define tam_ingresos 15
+=======
+#define tam_ingresos 20
+>>>>>>> 514eec82c68f2f988135cbd6595b6a8f73b9aa2b
 #define cant_propietarios 20
 #define ALPHA_ROMEO 1
 #define FERRARI 2
